@@ -48,8 +48,8 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler
     public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
     	   List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
-        System.out.println(getExceptionMessage(ex));
-        System.out.println(ex.getClass().getSimpleName());
+        logger.error(getExceptionMessage(ex));
+        logger.error(ex.getClass().getSimpleName());
         ErrorDetails error = new ErrorDetails(new Date(),"Sorry there was a problem processing your request", details);
         return new ResponseEntity(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }

@@ -8,6 +8,9 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
+
+import com.maersk.assignment.validation.ContainerSize;
+import com.maersk.assignment.validation.ValueOfEnum;
 @Table("bookings")
 public class Booking {
 
@@ -15,9 +18,11 @@ public class Booking {
 	private BookingKey bookingKey;
 	
 	@NotNull
+	@ContainerSize
 	private Integer containerSize;
 	
 	@NotNull
+	@ValueOfEnum(enumClass = ContainerType.class)
 	private ContainerType containerType;
 	
 	@NotNull
