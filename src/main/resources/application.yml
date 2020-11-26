@@ -1,0 +1,13 @@
+logging:
+  level:
+    web: DEBUG
+spring:
+  application:
+    name: maersk-assignment-cassandra
+  data:
+    cassandra:
+      contact-points: 127.0.0.1
+      keyspace-name: maersk
+      local-datacenter: datacenter1
+      port: 9042
+      schema-action: CREATE_IF_NOT_EXISTS

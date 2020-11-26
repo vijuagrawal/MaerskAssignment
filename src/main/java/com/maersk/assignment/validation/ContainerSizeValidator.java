@@ -1,6 +1,6 @@
 package com.maersk.assignment.validation;
 
-import javax.validation.ConstraintValidator;  
+import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;  
   
 public class ContainerSizeValidator implements ConstraintValidator<ContainerSize,Integer> {  

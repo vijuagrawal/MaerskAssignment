@@ -22,8 +22,8 @@ public class Booking {
 	private Integer containerSize;
 	
 	@NotNull
-	@ValueOfEnum(enumClass = ContainerType.class)
-	private ContainerType containerType;
+	@ValueOfEnum(enumClass = ContainerType.class, message = "ContainerType should be either DRY or REEFER")
+	private String containerType;
 	
 	@NotNull
 	@Size(min = 2, max = 10, message = "Origin should have size between 2 to 10 character")
@@ -43,7 +43,7 @@ public class Booking {
 	public Booking() {
 		
 	}
-	public Booking(BookingKey bookingKey, @NotNull Integer containerSize, @NotNull ContainerType containerType,
+	public Booking(BookingKey bookingKey, @NotNull Integer containerSize, @NotNull String containerType,
 			@NotNull @Size(min = 2, max = 10, message = "Origin should have size between 2 to 10 character") String origin,
 			@NotNull @Size(min = 2, max = 10, message = "Destination should have size between 2 to 10 character") String destination,
 			@NotNull @Range(min = 1, max = 1000, message = "Quantity should be in range 1 to 100") String quantity) {
@@ -73,11 +73,11 @@ public class Booking {
 		this.containerSize = containerSize;
 	}
 
-	public ContainerType getContainerType() {
+	public String getContainerType() {
 		return containerType;
 	}
 
-	public void setContainerType(ContainerType containerType) {
+	public void setContainerType(String containerType) {
 		this.containerType = containerType;
 	}
 

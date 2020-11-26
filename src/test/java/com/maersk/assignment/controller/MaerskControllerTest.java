@@ -78,7 +78,7 @@ public class MaerskControllerTest  {
 		   String uri = "/api/bookings";
 		   BookingKey bookingKey=   new BookingKey(1,1,1);
 		   ResponseEntity<BookingKey> responseKey=   new ResponseEntity(bookingKey, HttpStatus.OK);
-		      Booking booking = new Booking(bookingKey,20,ContainerType.DRY,"Mumbai","Pune","20");
+		      Booking booking = new Booking(bookingKey,20,"DRY","Mumbai","Pune","20");
 		      
 			 MockHttpServletRequest request = new MockHttpServletRequest();
 		        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
